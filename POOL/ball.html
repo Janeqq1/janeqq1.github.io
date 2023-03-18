@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <body></body>
+    <body>
+        <!-- create a pool table -->
+        <div id="pooltable" style="
+            z-index:1;
+            position:absolute;
+            left:0px;
+            top:0px;
+            width:350px;
+            height:350px;
+            background:bisque">
+        </div>
+
+        <div id="ball" style="
+            z-index:5;
+            position:absolute;
+            left:0px;
+            top:0px;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background:green">
+        </div>
+
+    </body>
     <script src="magic.js"></script>    
     <script src="ball.js"></script>    
+    <script>
+        var velocityX = 5;
+        var velocityY = 3;
+        var positionX = 0;
+        var positionY = 0;
+        var ball = document.getElementById('ball');
+
+        // YOUR CODE 
+        // ----------------
+        function move() {
+        if ((positionX < 0) || (positionX > 300)){
+            // hit left or right edge
+            velocityX = -velocityX;
+        } 
+        
+        if ((positionY < 0) || (positionY > 300)) {
+            // hit top or bottom edge
+            velocityY = -velocityY;
+        }
+
+        positionX += velocityX;
+        positionY += velocityY;
+        ball.style.left = positionX + 'px';
+        ball.style.top = positionY + 'px';
+        }
+
+        setInterval(move, 20);
+    </script>
 </html>
