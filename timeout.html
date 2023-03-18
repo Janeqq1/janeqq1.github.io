@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script>
+    // I want to say hello 5 times 2 seconds apart
+    function sayHello5 () {
+       var counter = 0;
+
+       var sayHello = function () {
+        if (counter >= 5)
+            return;
+
+        counter++;
+        console.log("Hello World " + counter);
+
+        // now schedule next run
+        setTimeout(sayHello, 2000);
+       };
+
+       sayHello();
+    };
+
+    sayHello5();
+</script>
+</html>
