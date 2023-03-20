@@ -2,8 +2,11 @@
 <html>
   <body>
     <!-- create a pool table -->
-    <table>
-        <tr>
+    <div id="playball" style="
+    width: 900px;
+    height: 400px;
+    ">
+        
     <div
       id="pooltable"
       style="
@@ -46,23 +49,20 @@
         background: black;
       "
     ><p style="text-align:center; color: white">8</p></div>
+    
     </div>
-    </tr>
-    <tr>
+    
     <br>
+    
     <div id="Demo" style="
-    position: absolute;
-    top: 900px;
-    left: 0px;
     width: 850px;
-    height: 200px;
-    background: red;">
-    <p style="z-index:10">Before the link to Movie</p>
-    <a href="pool.mov">Demo</a>
-    <p>After the link to Movie</p>
+    background: palegoldenrod;">
+
+    <a href="pool.mov">--- Demo ---</a>
+    
     </div>
-    </tr>
-    </table>
+    
+    
   </body>
   <script src="magic.js"></script>
   <script src="ball.js"></script>
@@ -131,7 +131,7 @@
       ball.style.top = positionY + "px";
     }
 
-    //setInterval(move, 20);
+    setInterval(move, 20);
     //move();
   </script>
 </html>
