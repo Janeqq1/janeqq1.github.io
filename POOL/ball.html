@@ -2,7 +2,7 @@
 <html>
   <body>
     <!-- create a pool table -->
-    <div>
+    <div id="playpool">
     <div
       id="pooltable"
       style="
@@ -48,9 +48,11 @@
     </div>
 
     <br>
+    <div id="Demo">
     <p style="z-index:10">Before the link to Movie</p>
     <a href="pool.mov">Demo</a>
     <p>After the link to Movie</p>
+    </div>
   </body>
   <script src="magic.js"></script>
   <script src="ball.js"></script>
@@ -119,7 +121,7 @@
       ball.style.top = positionY + "px";
     }
 
-    setInterval(move, 20);
+    //setInterval(move, 20);
     //move();
   </script>
 </html>
