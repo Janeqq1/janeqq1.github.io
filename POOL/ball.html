@@ -1,57 +1,122 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <!-- create a pool table -->
-        <div id="pooltable" style="
-            z-index:1;
-            position:absolute;
-            left:0px;
-            top:0px;
-            width:350px;
-            height:350px;
-            background:bisque">
-        </div>
+  <body>
+    <!-- create a pool table -->
+    <div
+      id="pooltable"
+      style="
+        z-index: 1;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 850px;
+        height: 350px;
+        background: bisque;
+      "
+    ></div>
 
-        <div id="ball" style="
-            z-index:5;
-            position:absolute;
-            left:0px;
-            top:0px;
-            width:50px;
-            height:50px;
-            border-radius:50%;
-            background:green">
-        </div>
+    <!-- create the start ball -->
+    <div
+      id="ball1"
+      style="
+        z-index: 5;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: green;
+      "
+    ><p style="text-align:center; color: white">1</p></div>
 
-    </body>
-    <script src="magic.js"></script>    
-    <script src="ball.js"></script>    
-    <script>
-        var velocityX = 5;
-        var velocityY = 3;
-        var positionX = 0;
-        var positionY = 0;
-        var ball = document.getElementById('ball');
+    <!-- create the Black 8 ball -->
+    <div
+      id="ball8"
+      style="
+        z-index: 5;
+        position: absolute;
+        left: 400px;
+        top: 200px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: black;
+      "
+    ><p style="text-align:center; color: white">8</p></div>
 
-        // YOUR CODE 
-        // ----------------
-        function move() {
-        if ((positionX < 0) || (positionX > 300)){
-            // hit left or right edge
+    <br>
+    
+    <a href="./pool.mov">Demo</a>
+  </body>
+  <script src="magic.js"></script>
+  <script src="ball.js"></script>
+  <script>
+    var velocityX = 5;
+    var velocityY = 3;
+    var ball1X = 0;
+    var ball1Y = 0;
+    var ball8X = 400;
+    var ball8Y = 200;
+    var ball1 = document.getElementById("ball1");
+    var ball8 = document.getElementById("ball8");
+    var ball8Moving = false;
+    var positionX;
+    var positionY;
+    var ball;
+    
+
+    // YOUR CODE
+    // ----------------
+    function move() {
+      
+      var ball1Offsets = ball1.getBoundingClientRect();
+      var ball8Offsets = ball8.getBoundingClientRect();
+
+      ball1X = ball1Offsets.left;
+      ball1Y = ball1Offsets.top;
+
+      ball8X = ball8Offsets.left;
+      ball8Y = ball8Offsets.top;
+
+      // see whether the two balls are meeting now
+      if ((ball1X - ball8X)**2 + (ball1Y - ball8Y)**2 < 50**2) {
+        ball8Moving = !ball8Moving;
+      }
+
+      if (ball8Moving) {
+        ball = ball8;
+        if ((ball8X < 0) || (ball8X > 800)) {
             velocityX = -velocityX;
-        } 
+        }
         
-        if ((positionY < 0) || (positionY > 300)) {
-            // hit top or bottom edge
+        if ((ball8Y < 0) || (ball8Y > 300)) {
             velocityY = -velocityY;
         }
+    
+        positionX = ball8X + velocityX;
+        positionY = ball8Y + velocityY;
 
-        positionX += velocityX;
-        positionY += velocityY;
-        ball.style.left = positionX + 'px';
-        ball.style.top = positionY + 'px';
+      } else {
+        ball = ball1;
+        if ((ball1X < 0) || (ball1X > 800)) {
+            velocityX = -velocityX;
         }
+        
+        if ((ball1Y < 0) || (ball1Y > 300)) {
+            velocityY = -velocityY;
+        }   
 
-        setInterval(move, 20);
-    </script>
+        positionX = ball1X + velocityX;
+        positionY = ball1Y + velocityY;
+
+      }
+
+      ball.style.left = positionX + "px";
+      ball.style.top = positionY + "px";
+    }
+
+    setInterval(move, 20);
+    //move();
+  </script>
 </html>
