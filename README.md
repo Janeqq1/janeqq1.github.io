@@ -8,5 +8,5 @@ This is a repository for assignments done in MITxPRO course: *Professional Certi
 
 ### Pool
 
-### [PacMan](https:https://janeqq1.github.io/PacMan/pacman.html)
+### [PacMan](https://janeqq1.github.io/PacMan/pacman.html)
 
