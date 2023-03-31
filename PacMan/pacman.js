@@ -17,7 +17,6 @@ var direction = 0;
 var focus = 0;
 
 function Run() {
-
   
   if (!started) {
     return;
@@ -59,6 +58,9 @@ function StopPac() {
 }
 
 function UpPac() {
+  if (!started) {
+    return;
+  }
   posY -= 20;
   if (posY <= 0) {
     posY = 0;
@@ -66,6 +68,9 @@ function UpPac() {
 }
 
 function DownPac() {
+  if (!started) {
+    return;
+  }
   posY += 20;
   if (posY + imgWidth >= fieldHeight) {
     posY = fieldHeight - imgWidth;
