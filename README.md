@@ -4,9 +4,9 @@ This is a repository for assignments done in MITxPRO course: *Professional Certi
 
 ## List of Assignments
 
-### Mona Lisa
+### [Mona Lisa](https://janeqq1.github.io/Painting1/ball.html)
 
-### Pool
+### [Pool](https://janeqq1.github.io/POOL/ball.html)
 
 ### [PacMan](https://janeqq1.github.io/PacMan/pacman.html)
 
