@@ -1,12 +1,12 @@
 # README instruction  
+<hr>
+This is a repository for assignments done in MITxPRO course: *Professional Certificate in Coding: Full Stack Development with MERN*.  
+<hr>
+> ## List of Assignments
 
-This is a repository for assignments done in MITxPRO course: **Professional Certificate in Coding: Full Stack Development with MERN**.  
+- ### Mona Lisa
 
-## List of Assignments
+- ### Pool
 
-### Mona Lisa
-
-### Pool
-
-### PacMan
+- ### PacMan
 
