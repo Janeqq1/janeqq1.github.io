@@ -1,10 +1,13 @@
 var pos = 0;
-let pageWidth = window.innerWidth;
-pageWidth = 600;
-console.log("pageWidth is: " + pageWidth);
+var started = false;
+var posY = 0;
+
+let img = document.getElementById("PacMan");
+let imgWidth = img.width;
+
 let fieldDiv = document.getElementById("playfield");
 let fieldWidth = parseInt(fieldDiv.style.width);
-console.log("field Width 1000 is: " + fieldWidth);
+let fieldHeight = parseInt(fieldDiv.style.height);
 
 const pacArray = [
   ["./images/PacMan1.png", "./images/PacMan2.png"],
@@ -14,11 +17,12 @@ var direction = 0;
 var focus = 0;
 
 function Run() {
-  let img = document.getElementById("PacMan");
-  let imgWidth = img.width;
-  console.log("imgWidth: " + imgWidth);
-  console.log("pageWidth: " + pageWidth);
-  console.log("pos: " + pos);
+
+  
+  if (!started) {
+    return;
+  }
+
   focus = (focus + 1) % 2;
   direction = checkPageBounds(direction, imgWidth, pos, fieldWidth);
   img.src = pacArray[direction][focus];
@@ -28,15 +32,44 @@ function Run() {
       pos = 0;
     }
     img.style.left = pos + "px";
+    img.style.top = posY + "px";
   } else {
     pos += 20; 
     if (pos + imgWidth > fieldWidth) {
       pos = fieldWidth - imgWidth;
     }
     img.style.left = pos + "px";
+    img.style.top = posY + "px";
   }
 
   setTimeout(Run, 300);
+}
+
+function StartPac() {
+  if (!started) {
+    started = true;
+    Run();
+  } else {
+    // don't start again. It would setTimeout again and make PacMan run faster
+  }
+}
+
+function StopPac() {
+  started = false;
+}
+
+function UpPac() {
+  posY -= 20;
+  if (posY <= 0) {
+    posY = 0;
+  }
+}
+
+function DownPac() {
+  posY += 20;
+  if (posY + imgWidth >= fieldHeight) {
+    posY = fieldHeight - imgWidth;
+  }
 }
 
 function checkPageBounds(direction, imgWidth, pos, pageWidth) {
