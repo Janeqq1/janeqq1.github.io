@@ -10,3 +10,5 @@ This is a repository for assignments done in MITxPRO course: *Professional Certi
 
 ### [PacMan](https://janeqq1.github.io/PacMan/pacman.html)
 
+### <a href="http://janeqq1.github.io/hashDemoBlockies">Visual Hash </a>
+
