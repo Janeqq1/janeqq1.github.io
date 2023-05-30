@@ -17,5 +17,3 @@ This is a repository for assignments done in MITxPRO course: *Professional Certi
 
 ### [Pool](https://janeqq1.github.io/POOL/ball.html)
 
-### [Visual Hash](https://janeqq1.github.io/hashDemoBlockies">)
-
