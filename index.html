@@ -1,16 +1,63 @@
+<!DOCTYPE html>
 <html>
-    <h1> Jane Wang's Portfolio May 1 2023 </h1>
-    <p>Hello World from top of Mount Mansfield Test Circle Style</p>
-    <img src="./mansfield.jpg" style="width:200;height:200;border-radius:50%;"/>
-    <ul>
-        <li><a href="./Painting1/ball.html" target="_blank">Mona Lisa</a></li>
-        <li><a href="./POOL/ball.html" target="_blank">Pool (under construction)</a></li>
-        <li><a href="./PacMan/pacman.html" target="_blank">PacMan (under construction)</a></li>
-        <li><a href="https://janeqq1.github.io/hashDemoBlockies" target="_blank">Visual Hash</a></li>
-        <li><a href="https://janeqq1.github.io/PacMen-Exercise" target="_blank">PacMen Exercise</a></li>
-        <li><a href="https://janeqq1.github.io/Eye-Exercise" target="_blank">Eye Exercise</a></li>
-        <li><a href="https://janeqq1.github.io/Real-Time-Bus-Tracker" target="_blank">Real Time Bus Tracker</a></li>
-        
-        <iframe width="420" height="315" src="https://www.youtube.com/embed/3CElVK0rM_k"></iframe>
-    </ul>
-    </html>
+  <head>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- own css -->
+    <link href="./home.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="box header">Jane Wang's Portfolio</div>
+
+      <div class="box mynav">
+        <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./projects.html">Projects</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+
+      <div class="box sidebar">
+        <img src="./signature.png" style="width: 200; height: 200" />
+        <p>Hello, this is Jane Wang's Portfolio page for MITxPRO's Full Stack Web Development
+        course. It has been very fun learning. My github username is janeqq1, my LinkedIn 
+        will be provided upon request. Best way to contact me is through
+        <a href="mailto: qinqin.j.wang@gmail.com">email</a>. </p>
+        <p>I will be constantly updating this page. Please check back often and 
+          send me any suggestions or recommendations. 
+        </p>
+      </div>
+
+      <div class="box content">
+        Video introduction to the featured projects. 
+        <iframe
+          width="420"
+          height="315"
+          src="https://www.youtube.com/embed/3CElVK0rM_k"
+        ></iframe>
+      </div>
+
+      <div class="box footer">
+        <a href="mailto: qinqin.j.wang@gmail.com?subject=Feedback&body=Message">Send Feedback</a></div>
+    </div>
+  </body>
+
+</html>
