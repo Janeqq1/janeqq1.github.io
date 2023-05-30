@@ -1,0 +1,33 @@
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="./sandbox.css" />
+        <script>
+            // run this function when the document is loaded
+            window.onload = () => {
+                // create a couple of elements in an empty HTML page
+                const heading = document.createElement("h1");
+                //const headingText = document.createTextNode("Big Head!");
+                //heading.appendChild(headingText);
+                heading.innerText = "Big Text Head";
+                document.body.appendChild(heading);
+
+            };
+        </script>
+    </head>
+    <body>
+    <!--     <div class="container">
+            <textarea class="story"></textarea>
+            <button id="set-text" type="button">Set text content</button>
+            <button id="clear-text" type="button">Clear text content</button>
+          </div> -->
+      
+          <div class="container">
+            <div class="parent">parent</div>
+            <button id="add-child" type="button">Add a child</button>
+            <button id="remove-child" type="button">Remove child</button>
+          </div>
+
+          <input type="button" value="Generate a table" onclick="generateTable()" />
+    </body>
+    <script src="./sandbox.js"></script>
+</html>
